@@ -69,7 +69,7 @@ li {
   gap: 1rem;
 }
 li::before {
-  content: url(assets/images/icon-list.svg);
+  content: url(assets\images\icon-list.svg);
   height: 21px;
 }
 
