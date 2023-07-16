@@ -1,37 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="stylesheet" href="styles.css">
-  
-  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
-</head>
-<body>
-  <div class="card">
-    <div class="content">
-      <h1 class="header">Stay updated!</h1>
-      <p class="cite">Join 60,000+ product managers receiving monthly updates on:</p>
-      <ul class="list-features">
-        <li>Product discovery and building what matters</li>
-        <li>Measuring to ensure updates are a success</li>
-        <li>And much more!</li>
-      </ul>
-    <form autocomplete="off" class="form-sing-up">
-      <div class="cite-group">
-        <label class="label">Email address</label>
-        <div class="error-text">Valid email required</div>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+
+  <body>
+    <div class="card" id="card">
+      <div class="content">
+        <h1 class="header">Stay updated!</h1>
+        <p class="cite">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <ul class="list-features">
+          <li>Product discovery and building what matters</li>
+          <li>Measuring to ensure updates are a success</li>
+          <li>And much more!</li>
+        </ul>
+        <form class="form-sing-up" autocomplete="off" id="form">
+          <div class="cite-group">
+            <label class="label">Email address</label>
+            <div class="error-text hidden" id="text">Valid email required</div>
+          </div>
+          <input
+            class="input"
+            id="email"
+            type="text"
+            name="email"
+            placeholder="bla24blabla@gmail.com"
+            onkeydown="validation(), ch()"
+          />
+        </form>
+        <button class="btn" id="button">
+          <span>Subscribe to monthly newsletter</span>
+        </button>
       </div>
-      <input type="text" name="email" class="input" id="email" placeholder="bla24blabla@gmail.com">
-    </form>
-    <button class="btn"><span>Subscribe to monthly newsletter</span></button>
+      <div class="content-image">
+        <picture>
+          <source
+            srcset="assets/images/illustration-sign-up-desktop.svg"
+            media="(min-width: 960px)"
+          />
+          <img src="assets/images/illustration-sign-up-mobile.svg" alt="" />
+        </picture>
+      </div>
     </div>
-    <picture>
-      <source srcset="assets/images/illustration-sign-up-desktop.svg" media="(min-width: 960px)">
-      <img src="assets/images/illustration-sign-up-mobile.svg" alt="">
-    </picture>
-  </div>
-</body>
+    <div class="wrapper hidden" id="wrapper">
+      <div class="card-sucess">
+        <img
+          src="assets/images/icon-success.svg"
+          alt="hello0world"
+          class="sucess-image"
+        />
+        <h1 class="success-header">Thanks for subscribing!</h1>
+        <p class="card-success-text">
+          A confirmation email has been sent to
+          <span class="text-bold" id="email-msg"></span>. Please open it and
+          click the button inside to confirm your subscription
+        </p>
+      </div>
+      <button class="btn btn-success">
+        <span>Dismiss message</span>
+      </button>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
