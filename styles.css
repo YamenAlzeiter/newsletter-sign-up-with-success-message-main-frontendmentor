@@ -121,7 +121,7 @@ form{
     margin-top: 2.5rem;
     display: flex;
     flex-direction: column;
-    gap: .5rem
+    gap: .5rem;
 }
 .btn {
     position:relative;
@@ -141,7 +141,7 @@ form{
     transition: background-image .2s; 
    }
    .btn span {
-    position:relative
+    position:relative;
    }
    .btn:hover,
    .btn:focus {
