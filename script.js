@@ -14,14 +14,13 @@ function validation() {
     if (!email.match(pattern)) {
       mail.classList.add("error");
       text.classList.remove("hidden");
-
       submitted = false;
     } else {
       card.classList.add("hidden");
       sucessCard.classList.remove("hidden");
     }
   });
-  if (email.match("")) {
+  if (email.match("") || email.match(pattern)) {
     mail.classList.remove("error");
     text.classList.add("hidden");
   }
@@ -30,4 +29,11 @@ var span = document.getElementById("email-msg");
 
 function ch() {
   span.textContent = email.value;
+}
+function back() {
+  var card = document.getElementById("card");
+  var sucessCard = document.getElementById("wrapper");
+
+  sucessCard.classList.add("hidden");
+  card.classList.remove("hidden");
 }
